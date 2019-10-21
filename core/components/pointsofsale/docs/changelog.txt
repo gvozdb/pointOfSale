@@ -1,0 +1,14 @@
+Changelog for pointsOfSale.
+
+1.1.1-pl
+==============
+- add new fields
+
+1.1.0-pl
+==============
+- add work with PhpSpreadsheet
+
+1.0.0-pl
+==============
+- inital edition
+

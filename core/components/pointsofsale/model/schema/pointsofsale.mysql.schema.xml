@@ -1,0 +1,151 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<model package="pointsofsale" baseClass="xPDOObject" platform="mysql" defaultEngine="InnoDB" phpdoc-package="pointsofsale"
+       version="1.1">
+
+    <object class="pof_point" table="pof_points" extends="xPDOSimpleObject">
+        <field key="country" dbtype="varchar" precision="100" phptype="string" null="false" default=""/>
+        <field key="retailer" dbtype="varchar" precision="100" phptype="string" null="false" default=""/>
+        <field key="city" dbtype="varchar" precision="100" phptype="string" null="true" default=""/>
+        <field key="post_code" dbtype="varchar" precision="100" phptype="string" null="true" default=""/>
+        <field key="address_line_1" dbtype="varchar" precision="255" phptype="string" null="true" default=""/>
+        <field key="address_line_2" dbtype="varchar" precision="255" phptype="string" null="false" default=""/>
+        <field key="telephone" dbtype="varchar" precision="50" phptype="string" null="true" default=""/>
+        <field key="email" dbtype="varchar" precision="100" phptype="string" null="true" default=""/>
+        <field key="website" dbtype="varchar" precision="100" phptype="string" null="true" default=""/>
+        <field key="website_2" dbtype="varchar" precision="100" phptype="string" null="true" default=""/>
+        <field key="contact_hours_1" dbtype="varchar" precision="50" phptype="string" null="true" default=""/>
+        <field key="contact_hours_2" dbtype="varchar" precision="50" phptype="string" null="true" default=""/>
+        <field key="lat" dbtype="varchar" precision="10" phptype="string" null="true" default=""/>
+        <field key="lon" dbtype="varchar" precision="10" phptype="string" null="true" default=""/>
+        <field key="active" dbtype="tinyint" precision="1" phptype="boolean" null="true" default="1"/>
+
+        <index alias="country" name="country" primary="false" unique="false" type="BTREE">
+            <column key="country" length="" collation="A" null="false"/>
+        </index>
+        <index alias="retailer" name="retailer" primary="false" unique="false" type="BTREE">
+            <column key="retailer" length="" collation="A" null="false"/>
+        </index>
+        <index alias="city" name="city" primary="false" unique="false" type="BTREE">
+            <column key="city" length="" collation="A" null="false"/>
+        </index>
+        <index alias="address_line_2" name="address_line_2" primary="false" unique="true" type="BTREE">
+            <column key="address_line_2" length="" collation="A" null="false"/>
+        </index>
+    </object>
+
+
+    <object class="pof_distributor" table="pof_distributors" extends="xPDOSimpleObject">
+        <field key="country" dbtype="varchar" precision="100" phptype="string" null="false" default=""/>
+        <field key="distributor" dbtype="varchar" precision="100" phptype="string" null="false" default=""/>
+        <field key="city" dbtype="varchar" precision="100" phptype="string" null="true" default=""/>
+        <field key="post_code" dbtype="varchar" precision="100" phptype="string" null="true" default=""/>
+        <field key="address_line_1" dbtype="varchar" precision="255" phptype="string" null="true" default=""/>
+        <field key="address_line_2" dbtype="varchar" precision="255" phptype="string" null="false" default=""/>
+        <field key="telephone" dbtype="varchar" precision="50" phptype="string" null="true" default=""/>
+        <field key="email" dbtype="varchar" precision="100" phptype="string" null="true" default=""/>
+        <field key="website" dbtype="varchar" precision="100" phptype="string" null="true" default=""/>
+        <field key="website_2" dbtype="varchar" precision="100" phptype="string" null="true" default=""/>
+        <field key="contact_hours_1" dbtype="varchar" precision="50" phptype="string" null="true" default=""/>
+        <field key="lat" dbtype="varchar" precision="10" phptype="string" null="true" default=""/>
+        <field key="lon" dbtype="varchar" precision="10" phptype="string" null="true" default=""/>
+        <field key="active" dbtype="tinyint" precision="1" phptype="boolean" null="true" default="1"/>
+
+        <index alias="country" name="country" primary="false" unique="false" type="BTREE">
+            <column key="country" length="" collation="A" null="false"/>
+        </index>
+        <index alias="distributor" name="distributor" primary="false" unique="false" type="BTREE">
+            <column key="distributor" length="" collation="A" null="false"/>
+        </index>
+        <index alias="city" name="city" primary="false" unique="false" type="BTREE">
+            <column key="city" length="" collation="A" null="false"/>
+        </index>
+        <index alias="address_line_2" name="address_line_2" primary="false" unique="true" type="BTREE">
+            <column key="address_line_2" length="" collation="A" null="false"/>
+        </index>
+    </object>
+
+
+    <object class="pof_service_center" table="pof_service_centers" extends="xPDOSimpleObject">
+        <field key="country" dbtype="varchar" precision="100" phptype="string" null="false" default=""/>
+        <field key="distributor" dbtype="varchar" precision="100" phptype="string" null="false" default=""/>
+        <field key="city" dbtype="varchar" precision="100" phptype="string" null="true" default=""/>
+        <field key="post_code" dbtype="varchar" precision="100" phptype="string" null="true" default=""/>
+        <field key="address_line_1" dbtype="varchar" precision="255" phptype="string" null="true" default=""/>
+        <field key="address_line_2" dbtype="varchar" precision="255" phptype="string" null="false" default=""/>
+        <field key="telephone" dbtype="varchar" precision="50" phptype="string" null="true" default=""/>
+        <field key="email" dbtype="varchar" precision="100" phptype="string" null="true" default=""/>
+        <field key="website" dbtype="varchar" precision="100" phptype="string" null="true" default=""/>
+        <field key="website_2" dbtype="varchar" precision="100" phptype="string" null="true" default=""/>
+        <field key="contact_hours_1" dbtype="varchar" precision="50" phptype="string" null="true" default=""/>
+        <field key="lat" dbtype="varchar" precision="10" phptype="string" null="true" default=""/>
+        <field key="lon" dbtype="varchar" precision="10" phptype="string" null="true" default=""/>
+        <field key="active" dbtype="tinyint" precision="1" phptype="boolean" null="true" default="1"/>
+
+        <index alias="country" name="country" primary="false" unique="false" type="BTREE">
+            <column key="country" length="" collation="A" null="false"/>
+        </index>
+        <index alias="distributor" name="distributor" primary="false" unique="false" type="BTREE">
+            <column key="distributor" length="" collation="A" null="false"/>
+        </index>
+        <index alias="city" name="city" primary="false" unique="false" type="BTREE">
+            <column key="city" length="" collation="A" null="false"/>
+        </index>
+        <index alias="address_line_2" name="address_line_2" primary="false" unique="true" type="BTREE">
+            <column key="address_line_2" length="" collation="A" null="false"/>
+        </index>
+    </object>
+
+
+    <object class="pof_dealer" table="pof_dealers" extends="xPDOSimpleObject">
+        <field key="country" dbtype="varchar" precision="100" phptype="string" null="false" default=""/>
+        <field key="distributor" dbtype="varchar" precision="100" phptype="string" null="false" default=""/>
+        <field key="city" dbtype="varchar" precision="100" phptype="string" null="true" default=""/>
+        <field key="post_code" dbtype="varchar" precision="100" phptype="string" null="true" default=""/>
+        <field key="address_line_1" dbtype="varchar" precision="255" phptype="string" null="true" default=""/>
+        <field key="address_line_2" dbtype="varchar" precision="255" phptype="string" null="false" default=""/>
+        <field key="telephone" dbtype="varchar" precision="50" phptype="string" null="true" default=""/>
+        <field key="email" dbtype="varchar" precision="100" phptype="string" null="true" default=""/>
+        <field key="website" dbtype="varchar" precision="100" phptype="string" null="true" default=""/>
+        <field key="website_2" dbtype="varchar" precision="100" phptype="string" null="true" default=""/>
+        <field key="contact_hours_1" dbtype="varchar" precision="50" phptype="string" null="true" default=""/>
+        <field key="lat" dbtype="varchar" precision="10" phptype="string" null="true" default=""/>
+        <field key="lon" dbtype="varchar" precision="10" phptype="string" null="true" default=""/>
+        <field key="active" dbtype="tinyint" precision="1" phptype="boolean" null="true" default="1"/>
+
+        <index alias="country" name="country" primary="false" unique="false" type="BTREE">
+            <column key="country" length="" collation="A" null="false"/>
+        </index>
+        <index alias="distributor" name="distributor" primary="false" unique="false" type="BTREE">
+            <column key="distributor" length="" collation="A" null="false"/>
+        </index>
+        <index alias="city" name="city" primary="false" unique="false" type="BTREE">
+            <column key="city" length="" collation="A" null="false"/>
+        </index>
+        <index alias="address_line_2" name="address_line_2" primary="false" unique="true" type="BTREE">
+            <column key="address_line_2" length="" collation="A" null="false"/>
+        </index>
+    </object>
+
+
+    <object class="pof_country" table="pof_countries" extends="xPDOSimpleObject">
+        <field key="country" dbtype="varchar" precision="100" phptype="string" null="false" default=""/>
+        <field key="currency" dbtype="varchar" precision="100" phptype="string" null="true" default=""/>
+        <field key="code" dbtype="varchar" precision="4" phptype="string" null="true" default=""/>
+        <field key="position" dbtype="varchar" precision="50" phptype="string" null="true" default=""/>
+
+        <field key="active" dbtype="tinyint" precision="1" phptype="boolean" null="true" default="1"/>
+        <field key="default" dbtype="tinyint" precision="1" phptype="boolean" null="true" default="0"/>
+        <field key="show_in_switcher" dbtype="tinyint" precision="1" phptype="boolean" null="true" default="1"/>
+
+        <index alias="country" name="country" primary="false" unique="true" type="BTREE">
+            <column key="country" length="" collation="A" null="false"/>
+        </index>
+        <index alias="currency" name="currency" primary="false" unique="false" type="BTREE">
+            <column key="currency" length="" collation="A" null="false"/>
+        </index>
+        <index alias="position" name="position" primary="false" unique="false" type="BTREE">
+            <column key="position" length="" collation="A" null="false"/>
+        </index>
+    </object>
+
+</model>
