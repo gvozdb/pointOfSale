@@ -9,7 +9,6 @@ class pointsOfSaleHomeManagerController extends modExtraManagerController
     /** @var pointsOfSale $pointsOfSale */
     public $pointsOfSale;
 
-
     /**
      *
      */
@@ -69,11 +68,13 @@ class pointsOfSaleHomeManagerController extends modExtraManagerController
         $this->addJavascript($this->pointsOfSale->config['jsUrl'] . 'mgr/widgets/home.panel.js');
         $this->addJavascript($this->pointsOfSale->config['jsUrl'] . 'mgr/sections/home.js');
 
-        $this->addHtml('<script type="text/javascript">
-        pointsOfSale.config = ' . json_encode($this->pointsOfSale->config) . ';
-        pointsOfSale.config.connector_url = "' . $this->pointsOfSale->config['connectorUrl'] . '";
-        Ext.onReady(function() {MODx.load({ xtype: "pointsofsale-page-home"});});
-        </script>');
+        $this->addHtml('
+            <script>
+                pointsOfSale.config = ' . json_encode($this->pointsOfSale->config) . ';
+                pointsOfSale.config.connector_url = "' . $this->pointsOfSale->config['connectorUrl'] . '";
+                Ext.onReady(function() {MODx.load({ xtype: "pointsofsale-page-home"});});
+            </script>
+        ');
     }
 
 

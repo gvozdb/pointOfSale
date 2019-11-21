@@ -1,9 +1,20 @@
 <?php
-//include_once 'setting.inc.php';
+include_once 'common.inc.php';
+// include_once 'setting.inc.php';
 
 $_lang['pointsofsale'] = 'Point of Sale';
 $_lang['pointsofsale_menu_desc'] = 'Point of Sale Management';
 $_lang['pointsofsale_intro_msg'] = 'Manage points of sale, distributors and service centers. You can select multiple items by holding Shift or Ctrl button.';
+
+//
+$_lang['pos_tab_product_prices'] = 'Цены';
+
+//
+$_lang['pos_grid_country'] = 'Страна';
+$_lang['pos_grid_price'] = 'Цена';
+
+//
+//
 
 // Point of sale  lexicons
 $_lang['pointsofsale_points'] = 'Points';

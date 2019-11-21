@@ -1,4 +1,6 @@
 <?php
+include_once '../ru/default.inc.php';
+
 //include_once 'setting.inc.php';
 
 $_lang['pointsofsale'] = 'Point of Sale';

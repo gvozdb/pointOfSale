@@ -98,3 +98,17 @@ a.pointsofsale-btn.disabled, fieldset[disabled] a.pointsofsale-btn { pointer-eve
 .x-column-inner{
     margin:5px;
 }
+
+/**
+ * Window
+ */
+.x-window-body {
+    max-height: 80vh;
+}
+.pos-window .x-window-body.pos-window-tabs {
+    padding: 5px 10px 5px 10px;
+}
+.pos-window .x-window-body.pos-window-tabs .modx-tabs > .x-tab-panel-bwrap {
+    margin-top: -5px;
+    margin-bottom: -5px;
+}
