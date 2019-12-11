@@ -66,7 +66,10 @@ class posProductPricesGetListProcessor extends modObjectGetListProcessor
         }
 
         //
-        $c->where(['active' => true]);
+        $c->where([
+            'show_in_switcher' => true,
+            'active' => true,
+        ]);
 
         return $c;
     }

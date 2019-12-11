@@ -5,6 +5,26 @@
  */
 class posMsOnGetProductPrice extends posPlugin
 {
+    /**
+     * @var AviatorSite $avs
+     */
+    protected $avs;
+    /**
+     * @var avsLanguageLocation $all
+     */
+    protected $all;
+
+    function __construct(pointsOfSale &$pos, array &$sp)
+    {
+        parent::__construct($pos, $sp);
+
+        $this->avs = $this->modx->getService('aviatorsite', 'AviatorSite',
+            $this->modx->getOption('avs_core_path', null, MODX_CORE_PATH . 'components/aviatorsite/') . 'model/aviatorsite/');
+        $this->avs->initialize($this->modx->context->key);
+
+        $this->all = $this->avs->getLanguageLocation();
+    }
+
     public function run()
     {
         /** @var msProductData $product */
@@ -43,12 +63,13 @@ class posMsOnGetProductPrice extends posPlugin
             $returned['id'] = $data['id'];
         }
 
-        // //
-        // if (!empty($prices)) {
-        //     if (!empty($_SESSION['user_location']) && !empty($_SESSION['user_location']['code'])) {
         //
-        //     }
-        // }
+        if (!empty($prices)) {
+            $location = $this->all->getLocationData();
+            if (!empty($prices[$location['id']])) {
+                $price = $prices[$location['id']];
+            }
+        }
 
         // Set product price
         $returned['price'] = $price;
