@@ -1,5 +1,5 @@
 <?php
-include_once '../ru/default.inc.php';
+include_once dirname(__FILE__) . '/../ru/default.inc.php';
 
 //include_once 'setting.inc.php';
 
