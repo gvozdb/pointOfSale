@@ -18,7 +18,7 @@ return [
              */
 
             // Product
-            'msOnGetProductPrice' => ['priority' => 9999999],
+            'msOnGetProductPrice' => ['priority' => 999999],
         ],
     ],
 ];
